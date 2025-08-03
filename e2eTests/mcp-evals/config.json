@@ -1,0 +1,10 @@
+{
+  "mcpServerPath": "dotnet run --project core/src/AzureMcp.Cli",
+  "mcpServerArgs": [],
+  "evaluationCasesPath": "e2eTests/e2eTestPrompts.md",
+  "scoringModel": "gpt-4",
+  "outputDirectory": "e2eTests/mcp-evals/results",
+  "parallel": true,
+  "maxParallelism": 4,
+  "timeoutSeconds": 60
+}

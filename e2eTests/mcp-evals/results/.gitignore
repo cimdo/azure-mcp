@@ -1,0 +1,10 @@
+# Evaluation results
+*.json
+!config.json
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log
