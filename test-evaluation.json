@@ -1,0 +1,582 @@
+[
+  {
+    "id": "storage-001",
+    "name": "List Storage Accounts",
+    "description": "Test the azmcp-storage-account-list tool with prompt: List all storage accounts in my subscription",
+    "prompt": "List all storage accounts in my subscription",
+    "expectedTool": "azmcp-storage-account-list",
+    "expectedBehavior": "Should invoke the azmcp-storage-account-list tool and provide appropriate response",
+    "category": "storage",
+    "tags": ["azure", "storage", "account", "list"]
+  },
+  {
+    "id": "storage-002",
+    "name": "Show Storage Accounts",
+    "description": "Test the azmcp-storage-account-list tool with alternative prompt",
+    "prompt": "Show me my storage accounts",
+    "expectedTool": "azmcp-storage-account-list",
+    "expectedBehavior": "Should invoke the azmcp-storage-account-list tool and provide appropriate response",
+    "category": "storage",
+    "tags": ["azure", "storage", "account", "list"]
+  },
+  {
+    "id": "storage-003",
+    "name": "List Blob Containers",
+    "description": "Test the azmcp-storage-blob-container-list tool",
+    "prompt": "Show me the blob containers in the storage account mystorageaccount",
+    "expectedTool": "azmcp-storage-blob-container-list",
+    "expectedBehavior": "Should invoke the azmcp-storage-blob-container-list tool with the specified storage account",
+    "category": "storage",
+    "tags": ["azure", "storage", "blob", "container", "list"]
+  },
+  {
+    "id": "storage-004",
+    "name": "List Blobs in Container",
+    "description": "Test the azmcp-storage-blob-list tool",
+    "prompt": "List all blobs in the blob container mycontainer in the storage account mystorageaccount",
+    "expectedTool": "azmcp-storage-blob-list",
+    "expectedBehavior": "Should invoke the azmcp-storage-blob-list tool with container and storage account parameters",
+    "category": "storage",
+    "tags": ["azure", "storage", "blob", "list"]
+  },
+  {
+    "id": "storage-005",
+    "name": "Set Blob Access Tier",
+    "description": "Test the azmcp-storage-blob-batch-set-tier tool",
+    "prompt": "Set access tier to Cool for multiple blobs in the container mycontainer in the storage account mystorageaccount",
+    "expectedTool": "azmcp-storage-blob-batch-set-tier",
+    "expectedBehavior": "Should invoke the azmcp-storage-blob-batch-set-tier tool with appropriate parameters",
+    "category": "storage",
+    "tags": ["azure", "storage", "blob", "tier"]
+  },
+  {
+    "id": "storage-006",
+    "name": "List Storage Tables",
+    "description": "Test the azmcp-storage-table-list tool",
+    "prompt": "Show me the tables in the storage account mystorageaccount",
+    "expectedTool": "azmcp-storage-table-list",
+    "expectedBehavior": "Should invoke the azmcp-storage-table-list tool with the specified storage account",
+    "category": "storage",
+    "tags": ["azure", "storage", "table", "list"]
+  },
+  {
+    "id": "storage-007",
+    "name": "List Data Lake Paths",
+    "description": "Test the azmcp-storage-datalake-file-system-list-paths tool",
+    "prompt": "Show me the paths in the Data Lake file system myfilesystem in the storage account mystorageaccount",
+    "expectedTool": "azmcp-storage-datalake-file-system-list-paths",
+    "expectedBehavior": "Should invoke the azmcp-storage-datalake-file-system-list-paths tool with appropriate parameters",
+    "category": "storage",
+    "tags": ["azure", "storage", "datalake", "list"]
+  },
+  {
+    "id": "search-001",
+    "name": "List Search Services",
+    "description": "Test the azmcp-search-list tool",
+    "prompt": "Show me my Cognitive Search services",
+    "expectedTool": "azmcp-search-list",
+    "expectedBehavior": "Should invoke the azmcp-search-list tool to display all search services",
+    "category": "search",
+    "tags": ["azure", "search", "cognitive", "list"]
+  },
+  {
+    "id": "search-002",
+    "name": "List Search Services Alternative",
+    "description": "Test the azmcp-search-list tool with alternative prompt",
+    "prompt": "List all Cognitive Search services in my subscription",
+    "expectedTool": "azmcp-search-list",
+    "expectedBehavior": "Should invoke the azmcp-search-list tool to display all search services",
+    "category": "search",
+    "tags": ["azure", "search", "cognitive", "list"]
+  },
+  {
+    "id": "search-003",
+    "name": "List Search Indexes",
+    "description": "Test the azmcp-search-index-list tool",
+    "prompt": "Show me the indexes in the Cognitive Search service mysearchservice",
+    "expectedTool": "azmcp-search-index-list",
+    "expectedBehavior": "Should invoke the azmcp-search-index-list tool with the specified search service",
+    "category": "search",
+    "tags": ["azure", "search", "index", "list"]
+  },
+  {
+    "id": "search-004",
+    "name": "Query Search Index",
+    "description": "Test the azmcp-search-index-query tool",
+    "prompt": "Search for instances of documents in the index myindex in Cognitive Search service mysearchservice",
+    "expectedTool": "azmcp-search-index-query",
+    "expectedBehavior": "Should invoke the azmcp-search-index-query tool with appropriate search parameters",
+    "category": "search",
+    "tags": ["azure", "search", "query", "index"]
+  },
+  {
+    "id": "keyvault-001",
+    "name": "List Key Vault Secrets",
+    "description": "Test the azmcp-keyvault-secret-list tool",
+    "prompt": "Show me the secrets in the key vault mykeyvault",
+    "expectedTool": "azmcp-keyvault-secret-list",
+    "expectedBehavior": "Should invoke the azmcp-keyvault-secret-list tool with the specified key vault name",
+    "category": "keyvault",
+    "tags": ["azure", "keyvault", "secrets", "list"]
+  },
+  {
+    "id": "keyvault-002",
+    "name": "List Key Vault Keys",
+    "description": "Test the azmcp-keyvault-key-list tool",
+    "prompt": "List all keys in the key vault mykeyvault",
+    "expectedTool": "azmcp-keyvault-key-list",
+    "expectedBehavior": "Should invoke the azmcp-keyvault-key-list tool with the specified key vault name",
+    "category": "keyvault",
+    "tags": ["azure", "keyvault", "keys", "list"]
+  },
+  {
+    "id": "keyvault-003",
+    "name": "List Key Vault Certificates",
+    "description": "Test the azmcp-keyvault-certificate-list tool",
+    "prompt": "Show me the certificates in the key vault mykeyvault",
+    "expectedTool": "azmcp-keyvault-certificate-list",
+    "expectedBehavior": "Should invoke the azmcp-keyvault-certificate-list tool with the specified key vault name",
+    "category": "keyvault",
+    "tags": ["azure", "keyvault", "certificates", "list"]
+  },
+  {
+    "id": "keyvault-004",
+    "name": "Create Key Vault Secret",
+    "description": "Test the azmcp-keyvault-secret-create tool",
+    "prompt": "Create a new secret called mysecret with value myvalue in the key vault mykeyvault",
+    "expectedTool": "azmcp-keyvault-secret-create",
+    "expectedBehavior": "Should invoke the azmcp-keyvault-secret-create tool with appropriate parameters",
+    "category": "keyvault",
+    "tags": ["azure", "keyvault", "secret", "create"]
+  },
+  {
+    "id": "aks-001",
+    "name": "List AKS Clusters",
+    "description": "Test the azmcp-aks-cluster-list tool",
+    "prompt": "What AKS clusters do I have?",
+    "expectedTool": "azmcp-aks-cluster-list",
+    "expectedBehavior": "Should invoke the azmcp-aks-cluster-list tool to display all AKS clusters",
+    "category": "aks",
+    "tags": ["azure", "aks", "kubernetes", "cluster", "list"]
+  },
+  {
+    "id": "aks-002",
+    "name": "List AKS Clusters Alternative",
+    "description": "Test the azmcp-aks-cluster-list tool with alternative prompt",
+    "prompt": "Show me my Azure Kubernetes Service clusters",
+    "expectedTool": "azmcp-aks-cluster-list",
+    "expectedBehavior": "Should invoke the azmcp-aks-cluster-list tool to display all AKS clusters",
+    "category": "aks",
+    "tags": ["azure", "aks", "kubernetes", "cluster", "list"]
+  },
+  {
+    "id": "aks-003",
+    "name": "Get AKS Cluster Details",
+    "description": "Test the azmcp-aks-cluster-get tool",
+    "prompt": "Show me the details of AKS cluster mycluster in resource group myresourcegroup",
+    "expectedTool": "azmcp-aks-cluster-get",
+    "expectedBehavior": "Should invoke the azmcp-aks-cluster-get tool with cluster name and resource group",
+    "category": "aks",
+    "tags": ["azure", "aks", "kubernetes", "cluster", "details"]
+  },
+  {
+    "id": "cosmos-001",
+    "name": "List Cosmos DB Accounts",
+    "description": "Test the azmcp-cosmos-account-list tool",
+    "prompt": "Show me my cosmosdb accounts",
+    "expectedTool": "azmcp-cosmos-account-list",
+    "expectedBehavior": "Should invoke the azmcp-cosmos-account-list tool to display all Cosmos DB accounts",
+    "category": "cosmos",
+    "tags": ["azure", "cosmos", "database", "list"]
+  },
+  {
+    "id": "cosmos-002",
+    "name": "List Cosmos DB Databases",
+    "description": "Test the azmcp-cosmos-database-list tool",
+    "prompt": "Show me the databases in the cosmosdb account mycosmosaccount",
+    "expectedTool": "azmcp-cosmos-database-list",
+    "expectedBehavior": "Should invoke the azmcp-cosmos-database-list tool with the specified account name",
+    "category": "cosmos",
+    "tags": ["azure", "cosmos", "database", "list"]
+  },
+  {
+    "id": "cosmos-003",
+    "name": "List Cosmos DB Containers",
+    "description": "Test the azmcp-cosmos-database-container-list tool",
+    "prompt": "Show me the containers in the database mydatabase for the cosmosdb account mycosmosaccount",
+    "expectedTool": "azmcp-cosmos-database-container-list",
+    "expectedBehavior": "Should invoke the azmcp-cosmos-database-container-list tool with appropriate parameters",
+    "category": "cosmos",
+    "tags": ["azure", "cosmos", "container", "list"]
+  },
+  {
+    "id": "monitor-001",
+    "name": "List Log Analytics Workspaces",
+    "description": "Test the azmcp-monitor-workspace-list tool",
+    "prompt": "Show me my Log Analytics workspaces",
+    "expectedTool": "azmcp-monitor-workspace-list",
+    "expectedBehavior": "Should invoke the azmcp-monitor-workspace-list tool to display all Log Analytics workspaces",
+    "category": "monitor",
+    "tags": ["azure", "monitor", "analytics", "workspace", "list"]
+  },
+  {
+    "id": "monitor-002",
+    "name": "List Monitor Tables",
+    "description": "Test the azmcp-monitor-table-list tool",
+    "prompt": "Show me the tables in the Log Analytics workspace myworkspace",
+    "expectedTool": "azmcp-monitor-table-list",
+    "expectedBehavior": "Should invoke the azmcp-monitor-table-list tool with the specified workspace",
+    "category": "monitor",
+    "tags": ["azure", "monitor", "table", "list"]
+  },
+  {
+    "id": "monitor-003",
+    "name": "Query Monitor Metrics",
+    "description": "Test the azmcp-monitor-metrics-query tool",
+    "prompt": "Get the average CPU metric for storage account mystorageaccount over the last 24 hours with intervals",
+    "expectedTool": "azmcp-monitor-metrics-query",
+    "expectedBehavior": "Should invoke the azmcp-monitor-metrics-query tool with appropriate parameters",
+    "category": "monitor",
+    "tags": ["azure", "monitor", "metrics", "query"]
+  },
+  {
+    "id": "sql-001",
+    "name": "List SQL Databases",
+    "description": "Test the azmcp-sql-db-list tool",
+    "prompt": "Show me all the databases configuration details in the Azure SQL server myserver",
+    "expectedTool": "azmcp-sql-db-list",
+    "expectedBehavior": "Should invoke the azmcp-sql-db-list tool with the specified server name",
+    "category": "sql",
+    "tags": ["azure", "sql", "database", "list"]
+  },
+  {
+    "id": "sql-002",
+    "name": "Get SQL Database Details",
+    "description": "Test the azmcp-sql-db-show tool",
+    "prompt": "Show me the details of SQL database mydatabase in server myserver",
+    "expectedTool": "azmcp-sql-db-show",
+    "expectedBehavior": "Should invoke the azmcp-sql-db-show tool with database and server parameters",
+    "category": "sql",
+    "tags": ["azure", "sql", "database", "details"]
+  },
+  {
+    "id": "sql-003",
+    "name": "List SQL Firewall Rules",
+    "description": "Test the azmcp-sql-firewall-rule-list tool",
+    "prompt": "Show me the firewall rules for SQL server myserver",
+    "expectedTool": "azmcp-sql-firewall-rule-list",
+    "expectedBehavior": "Should invoke the azmcp-sql-firewall-rule-list tool with the specified server",
+    "category": "sql",
+    "tags": ["azure", "sql", "firewall", "list"]
+  },
+  {
+    "id": "sql-004",
+    "name": "List SQL Elastic Pools",
+    "description": "Test the azmcp-sql-elastic-pool-list tool",
+    "prompt": "Show me the elastic pools configured for SQL server myserver",
+    "expectedTool": "azmcp-sql-elastic-pool-list",
+    "expectedBehavior": "Should invoke the azmcp-sql-elastic-pool-list tool with the specified server",
+    "category": "sql",
+    "tags": ["azure", "sql", "elastic", "pool", "list"]
+  },
+  {
+    "id": "postgres-001",
+    "name": "List PostgreSQL Servers",
+    "description": "Test the azmcp-postgres-server-list tool",
+    "prompt": "Show me my PostgreSQL servers",
+    "expectedTool": "azmcp-postgres-server-list",
+    "expectedBehavior": "Should invoke the azmcp-postgres-server-list tool to display all PostgreSQL servers",
+    "category": "postgres",
+    "tags": ["azure", "postgres", "server", "list"]
+  },
+  {
+    "id": "postgres-002",
+    "name": "List PostgreSQL Databases",
+    "description": "Test the azmcp-postgres-database-list tool",
+    "prompt": "Show me the PostgreSQL databases in server mypostgresserver",
+    "expectedTool": "azmcp-postgres-database-list",
+    "expectedBehavior": "Should invoke the azmcp-postgres-database-list tool with the specified server",
+    "category": "postgres",
+    "tags": ["azure", "postgres", "database", "list"]
+  },
+  {
+    "id": "postgres-003",
+    "name": "List PostgreSQL Tables",
+    "description": "Test the azmcp-postgres-table-list tool",
+    "prompt": "Show me the tables in the PostgreSQL database mydatabase in server mypostgresserver",
+    "expectedTool": "azmcp-postgres-table-list",
+    "expectedBehavior": "Should invoke the azmcp-postgres-table-list tool with appropriate parameters",
+    "category": "postgres",
+    "tags": ["azure", "postgres", "table", "list"]
+  },
+  {
+    "id": "kusto-001",
+    "name": "List Data Explorer Clusters",
+    "description": "Test the azmcp-kusto-cluster-list tool",
+    "prompt": "Show me my Data Explorer clusters",
+    "expectedTool": "azmcp-kusto-cluster-list",
+    "expectedBehavior": "Should invoke the azmcp-kusto-cluster-list tool to display all Data Explorer clusters",
+    "category": "kusto",
+    "tags": ["azure", "kusto", "data", "explorer", "cluster", "list"]
+  },
+  {
+    "id": "kusto-002",
+    "name": "List Kusto Databases",
+    "description": "Test the azmcp-kusto-database-list tool",
+    "prompt": "Show me the databases in the Data Explorer cluster mykustocluster",
+    "expectedTool": "azmcp-kusto-database-list",
+    "expectedBehavior": "Should invoke the azmcp-kusto-database-list tool with the specified cluster",
+    "category": "kusto",
+    "tags": ["azure", "kusto", "database", "list"]
+  },
+  {
+    "id": "kusto-003",
+    "name": "List Kusto Tables",
+    "description": "Test the azmcp-kusto-table-list tool",
+    "prompt": "Show me the tables in the Data Explorer database mydatabase in cluster mykustocluster",
+    "expectedTool": "azmcp-kusto-table-list",
+    "expectedBehavior": "Should invoke the azmcp-kusto-table-list tool with appropriate parameters",
+    "category": "kusto",
+    "tags": ["azure", "kusto", "table", "list"]
+  },
+  {
+    "id": "kusto-004",
+    "name": "Query Kusto Data",
+    "description": "Test the azmcp-kusto-query tool",
+    "prompt": "Show me all items that contain the word error in the Data Explorer table mytable in cluster mykustocluster",
+    "expectedTool": "azmcp-kusto-query",
+    "expectedBehavior": "Should invoke the azmcp-kusto-query tool with search parameters",
+    "category": "kusto",
+    "tags": ["azure", "kusto", "query", "search"]
+  },
+  {
+    "id": "redis-001",
+    "name": "List Redis Caches",
+    "description": "Test the azmcp-redis-cache-list tool",
+    "prompt": "Show me my Redis Caches",
+    "expectedTool": "azmcp-redis-cache-list",
+    "expectedBehavior": "Should invoke the azmcp-redis-cache-list tool to display all Redis caches",
+    "category": "redis",
+    "tags": ["azure", "redis", "cache", "list"]
+  },
+  {
+    "id": "redis-002",
+    "name": "List Redis Clusters",
+    "description": "Test the azmcp-redis-cluster-list tool",
+    "prompt": "Show me the Redis Clusters in my subscription",
+    "expectedTool": "azmcp-redis-cluster-list",
+    "expectedBehavior": "Should invoke the azmcp-redis-cluster-list tool to display all Redis clusters",
+    "category": "redis",
+    "tags": ["azure", "redis", "cluster", "list"]
+  },
+  {
+    "id": "appconfig-001",
+    "name": "List App Configuration Stores",
+    "description": "Test the azmcp-appconfig-account-list tool",
+    "prompt": "Show me my App Configuration stores",
+    "expectedTool": "azmcp-appconfig-account-list",
+    "expectedBehavior": "Should invoke the azmcp-appconfig-account-list tool to display all App Configuration stores",
+    "category": "appconfig",
+    "tags": ["azure", "appconfig", "configuration", "list"]
+  },
+  {
+    "id": "appconfig-002",
+    "name": "List App Config Key-Values",
+    "description": "Test the azmcp-appconfig-kv-list tool",
+    "prompt": "Show me the key-value settings in App Configuration store myappconfigstore",
+    "expectedTool": "azmcp-appconfig-kv-list",
+    "expectedBehavior": "Should invoke the azmcp-appconfig-kv-list tool with the specified store name",
+    "category": "appconfig",
+    "tags": ["azure", "appconfig", "keyvalue", "list"]
+  },
+  {
+    "id": "foundry-001",
+    "name": "List AI Foundry Models",
+    "description": "Test the azmcp-foundry-models-list tool",
+    "prompt": "Show me the available AI Foundry models",
+    "expectedTool": "azmcp-foundry-models-list",
+    "expectedBehavior": "Should invoke the azmcp-foundry-models-list tool to display all available models",
+    "category": "foundry",
+    "tags": ["azure", "ai", "foundry", "models", "list"]
+  },
+  {
+    "id": "foundry-002",
+    "name": "List AI Foundry Deployments",
+    "description": "Test the azmcp-foundry-models-deployments-list tool",
+    "prompt": "Show me all AI Foundry model deployments",
+    "expectedTool": "azmcp-foundry-models-deployments-list",
+    "expectedBehavior": "Should invoke the azmcp-foundry-models-deployments-list tool to display all deployments",
+    "category": "foundry",
+    "tags": ["azure", "ai", "foundry", "deployments", "list"]
+  },
+  {
+    "id": "servicebus-001",
+    "name": "Get Service Bus Queue Details",
+    "description": "Test the azmcp-servicebus-queue-details tool",
+    "prompt": "Show me the details of service bus myservicebus queue myqueue",
+    "expectedTool": "azmcp-servicebus-queue-details",
+    "expectedBehavior": "Should invoke the azmcp-servicebus-queue-details tool with appropriate parameters",
+    "category": "servicebus",
+    "tags": ["azure", "servicebus", "queue", "details"]
+  },
+  {
+    "id": "servicebus-002",
+    "name": "Get Service Bus Topic Details",
+    "description": "Test the azmcp-servicebus-topic-details tool",
+    "prompt": "Show me the details of service bus myservicebus topic mytopic",
+    "expectedTool": "azmcp-servicebus-topic-details",
+    "expectedBehavior": "Should invoke the azmcp-servicebus-topic-details tool with appropriate parameters",
+    "category": "servicebus",
+    "tags": ["azure", "servicebus", "topic", "details"]
+  },
+  {
+    "id": "workbooks-001",
+    "name": "List Workbooks",
+    "description": "Test the azmcp-workbooks-list tool",
+    "prompt": "List all workbooks in my resource group myresourcegroup",
+    "expectedTool": "azmcp-workbooks-list",
+    "expectedBehavior": "Should invoke the azmcp-workbooks-list tool with the specified resource group",
+    "category": "workbooks",
+    "tags": ["azure", "workbooks", "list"]
+  },
+  {
+    "id": "workbooks-002",
+    "name": "Create Workbook",
+    "description": "Test the azmcp-workbooks-create tool",
+    "prompt": "Create a new workbook named myworkbook",
+    "expectedTool": "azmcp-workbooks-create",
+    "expectedBehavior": "Should invoke the azmcp-workbooks-create tool with the specified workbook name",
+    "category": "workbooks",
+    "tags": ["azure", "workbooks", "create"]
+  },
+  {
+    "id": "loadtesting-001",
+    "name": "List Load Testing Resources",
+    "description": "Test the azmcp-loadtesting-testresource-list tool",
+    "prompt": "List all load testing resources in the resource group myresourcegroup in my subscription",
+    "expectedTool": "azmcp-loadtesting-testresource-list",
+    "expectedBehavior": "Should invoke the azmcp-loadtesting-testresource-list tool with the specified resource group",
+    "category": "loadtesting",
+    "tags": ["azure", "loadtesting", "resource", "list"]
+  },
+  {
+    "id": "marketplace-001",
+    "name": "Get Marketplace Product",
+    "description": "Test the azmcp-marketplace-product-get tool",
+    "prompt": "Get details about marketplace product myproduct",
+    "expectedTool": "azmcp-marketplace-product-get",
+    "expectedBehavior": "Should invoke the azmcp-marketplace-product-get tool with the specified product name",
+    "category": "marketplace",
+    "tags": ["azure", "marketplace", "product", "get"]
+  },
+  {
+    "id": "grafana-001",
+    "name": "List Managed Grafana",
+    "description": "Test the azmcp-grafana-list tool",
+    "prompt": "List all Azure Managed Grafana in one subscription",
+    "expectedTool": "azmcp-grafana-list",
+    "expectedBehavior": "Should invoke the azmcp-grafana-list tool to display all Grafana instances",
+    "category": "grafana",
+    "tags": ["azure", "grafana", "managed", "list"]
+  },
+  {
+    "id": "bestpractices-001",
+    "name": "Get Azure Best Practices",
+    "description": "Test the azmcp-bestpractices-get tool",
+    "prompt": "Fetch the latest Azure deployment best practices",
+    "expectedTool": "azmcp-bestpractices-get",
+    "expectedBehavior": "Should invoke the azmcp-bestpractices-get tool to fetch deployment best practices",
+    "category": "bestpractices",
+    "tags": ["azure", "bestpractices", "deployment"]
+  },
+  {
+    "id": "bicep-001",
+    "name": "Get Bicep Schema Information",
+    "description": "Test the azmcp-bicepschema-get tool",
+    "prompt": "How can I use Bicep to create an Azure OpenAI service?",
+    "expectedTool": "azmcp-bicepschema-get",
+    "expectedBehavior": "Should invoke the azmcp-bicepschema-get tool to provide Bicep schema information",
+    "category": "bicep",
+    "tags": ["azure", "bicep", "schema", "openai"]
+  },
+  {
+    "id": "subscription-001",
+    "name": "List Subscriptions",
+    "description": "Test the azmcp-subscription-list tool",
+    "prompt": "What subscriptions do I have?",
+    "expectedTool": "azmcp-subscription-list",
+    "expectedBehavior": "Should invoke the azmcp-subscription-list tool to display all available subscriptions",
+    "category": "subscription",
+    "tags": ["azure", "subscription", "list"]
+  },
+  {
+    "id": "subscription-002",
+    "name": "Show Current Subscription",
+    "description": "Test the azmcp-subscription-list tool with alternative prompt",
+    "prompt": "What is my current subscription?",
+    "expectedTool": "azmcp-subscription-list",
+    "expectedBehavior": "Should invoke the azmcp-subscription-list tool to display subscription information",
+    "category": "subscription",
+    "tags": ["azure", "subscription", "current"]
+  },
+  {
+    "id": "group-001",
+    "name": "List Resource Groups",
+    "description": "Test the azmcp-group-list tool",
+    "prompt": "Show me my resource groups",
+    "expectedTool": "azmcp-group-list",
+    "expectedBehavior": "Should invoke the azmcp-group-list tool to display all resource groups",
+    "category": "group",
+    "tags": ["azure", "resource", "group", "list"]
+  },
+  {
+    "id": "rbac-001",
+    "name": "List Role Assignments",
+    "description": "Test the azmcp-role-assignment-list tool",
+    "prompt": "Show me the available role assignments in my subscription",
+    "expectedTool": "azmcp-role-assignment-list",
+    "expectedBehavior": "Should invoke the azmcp-role-assignment-list tool to display all role assignments",
+    "category": "rbac",
+    "tags": ["azure", "rbac", "role", "assignment", "list"]
+  },
+  {
+    "id": "tools-001",
+    "name": "List Azure MCP Tools",
+    "description": "Test the azmcp-tool-list tool",
+    "prompt": "Show me the available tools in the Azure MCP server",
+    "expectedTool": "azmcp-tool-list",
+    "expectedBehavior": "Should invoke the azmcp-tool-list tool to display all available MCP tools",
+    "category": "tools",
+    "tags": ["azure", "mcp", "tools", "list"]
+  },
+  {
+    "id": "extension-001",
+    "name": "Azure CLI Extension",
+    "description": "Test the azmcp-extension-az tool",
+    "prompt": "List all virtual machines in my subscription",
+    "expectedTool": "azmcp-extension-az",
+    "expectedBehavior": "Should invoke the azmcp-extension-az tool to execute Azure CLI commands",
+    "category": "extension",
+    "tags": ["azure", "cli", "extension", "vm"]
+  },
+  {
+    "id": "extension-002",
+    "name": "Azure Developer CLI Extension",
+    "description": "Test the azmcp-extension-azd tool",
+    "prompt": "Create a To-Do list web application that uses NodeJS and MongoDB",
+    "expectedTool": "azmcp-extension-azd",
+    "expectedBehavior": "Should invoke the azmcp-extension-azd tool to execute Azure Developer CLI commands",
+    "category": "extension",
+    "tags": ["azure", "azd", "extension", "nodejs"]
+  },
+  {
+    "id": "extension-003",
+    "name": "Azure Quick Review Extension",
+    "description": "Test the azmcp-extension-azqr tool",
+    "prompt": "Scan my Azure subscription for compliance recommendations",
+    "expectedTool": "azmcp-extension-azqr",
+    "expectedBehavior": "Should invoke the azmcp-extension-azqr tool to perform compliance scanning",
+    "category": "extension",
+    "tags": ["azure", "azqr", "compliance", "scan"]
+  }
+]
